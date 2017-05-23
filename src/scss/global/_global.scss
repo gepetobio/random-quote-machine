@@ -1,0 +1,16 @@
+// global styles here
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+:focus {
+    outline: $grey0 1px dotted;
+}
+body {
+    background: $white;
+}
+

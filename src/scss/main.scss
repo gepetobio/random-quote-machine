@@ -1,0 +1,23 @@
+// adjust the path to the bower libs if you move the src folder
+@import "bower_components/susy/sass/susy";
+@import "bower_components/breakpoint-sass/stylesheets/breakpoint";
+
+@import "vendor/print";
+@import "vendor/normalize"; //swap with reset if you don't want normalize
+@import "toolbox/fonts";
+@import "toolbox/colors";
+@import "toolbox/variables";
+@import "toolbox/toolbox";
+@import "toolbox/z-index";
+
+$susy: (
+    columns: 12,
+    container: $maxWidth,
+    global-box-sizing: border-box,
+    gutter-position: inside,
+);
+
+@import "global/typography";
+@import "global/global";
+@import "global/header";
+@import "global/footer";

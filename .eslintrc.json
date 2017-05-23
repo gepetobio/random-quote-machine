@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
+  },
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "jquery": true
+  }
+}

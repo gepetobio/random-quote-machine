@@ -1,0 +1,1 @@
+!function(s){"use strict";s("body").addClass("temp")}(jQuery);

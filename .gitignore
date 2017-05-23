@@ -1,0 +1,40 @@
+# phpstorm #
+.idea/
+
+# vim #
+*.swp
+*.swo
+*.un~
+**/*~
+**/*.bak
+**/*.sw[abcdefghijklmnop]
+
+# emacs #
+*~
+*#
+
+# common files#
+bower_components/
+node_modules/
+*.log
+**/*.log*
+
+# WP specific #
+wp-config.php
+
+# Drupal specific #
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows generated files #
+Thumbs.db
+desktop.ini
+

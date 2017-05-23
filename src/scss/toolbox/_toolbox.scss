@@ -1,0 +1,195 @@
+// sass-lint:disable-all
+%fix-first-item {
+    & > :first-child {
+        margin-top: 0;
+    }
+}
+%fix-last-item {
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+%fix-padding {
+    @extend %fix-first-item;
+    @extend %fix-last-item;
+}
+@mixin fixPadding() {
+    @extend %fix-first-item;
+    @extend %fix-last-item;
+}
+@mixin fixFloat {
+    &:after {
+        content: "."; 
+        display: block; 
+        height: 0; 
+        font-size:0;        
+        clear: both; 
+        visibility:hidden;
+    }
+}
+@mixin animate {
+    transition: all 0.4s ease-in-out;
+}
+@mixin animateProperty($property:all, $time:0.4) {
+    transition: $property ($time)+s ease-in-out;
+}
+@mixin animatePropertyDelay($property:all, $time:0.4, $delay: 0.2) {
+    transition:$property ($time)+s ease-in-out ($delay)+s;
+}
+@mixin transform($value){
+    transform: $value;
+}
+// adding a svg as bg image with png fallback
+@mixin bg-svg($img-name, $width, $height, $posX, $posY, $hover: false, $repeat: false, $axis: x) {
+    background-image: image-url('#{$img-name}.svg');
+    background-size: $width $height;
+    background-position: $posX $posY;
+    .no-svg & {
+        background-image: image-url('#{$img-name}.png');
+    }
+    @if $hover == true {
+        &:hover, &.active {
+            background-image: image-url('#{$img-name}-active.svg');
+            .no-svg & {
+                background-image: image-url('#{$img-name}-active.png');
+            }
+        }
+    }
+    @if $repeat == true {
+        background-repeat: repeat-#{$axis};
+    }
+    @else {
+        background-repeat: no-repeat;
+    }
+}
+@mixin word-wrap() {
+    word-break: break-word;
+    hyphens: auto;
+}
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin arrowDownColor($color) {
+    @extend %arrow-down;
+    border-top-color: $color;
+}
+
+@mixin arrowUpColor($color) {
+    @extend %arrow-up;
+    border-bottom-color: $color;
+}
+@mixin arrow($position: up, $size: 5, $color: red) {
+    position: relative;
+    &:before {
+        width: 0; 
+        height: 0; 
+        display: block;
+        position: absolute;
+        z-index: 20;
+        content: '';
+        @if $position == up {
+            border-left:  $size + px solid transparent;
+            border-right:  $size + px solid transparent;
+            border-bottom:  $size + px solid $color;
+            top: -($size - 1) + px;
+            bottom: auto;
+            left: 50%;
+            right: auto;
+            margin-left: -($size / 2) + px;
+        } @else if $position == down {
+            border-left: $size + px solid transparent;
+            border-right: $size + px solid transparent;
+            border-top: $size + px solid $color;
+            border-bottom: $size + px solid transparent;
+            top: auto;
+            bottom: -($size * 2) + px;
+            left: 50%;
+            right: auto;
+            margin-left: -($size) + px;
+        } @else if $position == left {
+            border-top: $size + px solid transparent;
+            border-bottom: $size + px solid transparent; 
+            border-right: $size + px solid $color; 
+            border-left: $size + px solid transparent;
+            left: -($size * 1.5) + px;
+            right: auto;
+            top: 50%;
+            bottom: auto;
+            margin-top: -($size / 2) + px;
+        } @else if $position == right {
+            border-top: $size + px solid transparent;
+            border-bottom: $size + px solid transparent;
+            border-left: $size + px solid $color;
+            border-right: $size + px solid transparent;
+            right: -($size * 2) + px;
+            left: auto;
+            top: 50%;
+            bottom: auto;
+            margin-top: -($size / 2) + px;
+        }
+        
+    }
+}
+//calculete percentage numbers
+@function calc-percent($target, $container) {
+    @return ($target / $container) * 100%;
+}
+//short version of calc-percent
+@function cp($target, $container) {
+    @return calc-percent($target, $container);
+}
+// foundation specific media queries
+@mixin bp($point) {
+    @if $point == sm {
+        @include breakpoint($sm) { @content; }
+    }
+    @else if $point == md {
+        @include breakpoint($md) { @content; }
+    }
+    @else if $point == lg {
+        @include breakpoint($lg) { @content; }
+    }
+    @else if $point == xlg {
+        @include breakpoint($xlg) { @content; }
+    }
+    @else if $point == xxlg {
+        @include breakpoint($xxlg) { @content; }
+    }
+    @else if $point == short {
+        @include breakpoint($short) { @content; }
+    }
+    @else if $point == retina {
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+            @content;
+        }
+    }
+    @else {
+        @include breakpoint($point) { @content; }
+    }
+}
+@function image-url($image-name) {
+    @return url($imagePath + $image-name);
+}
+@mixin retina($image) {
+    @media (min--moz-device-pixel-ratio: 2),
+    (-o-min-device-pixel-ratio: 2/1),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx) {
+        /* on retina, use image that's scaled by 2 */
+        background-image: image-url($image);
+    }
+}
+@mixin image-2x($image, $width, $height) {
+    @media (min--moz-device-pixel-ratio: 2),
+    (-o-min-device-pixel-ratio: 2/1),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx) {
+        /* on retina, use image that's scaled by 2 */
+        background-image: image-url($image);
+        background-size: $width $height;
+    }
+}
