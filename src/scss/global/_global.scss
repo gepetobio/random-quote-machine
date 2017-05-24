@@ -13,4 +13,19 @@ html {
 body {
     background: $white;
 }
-
+.wrapper {
+    margin: auto;
+    padding: 0 20px;
+    max-width: $maxWidth;
+    @include bp(lg) {
+        padding: 0;
+    }
+}
+.quotes-wrapper {
+    max-width: 500px;
+}
+.quotes-quote {
+    border-radius: 5px;
+    background: red;
+    padding: 30px;
+}
