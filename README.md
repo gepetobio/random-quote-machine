@@ -4,6 +4,7 @@ Application can be seen on [https://gepetobio.github.io/random-quote-machine/](h
 
 ## TODO
 
+* replace api with [https://market.mashape.com/andruxnet/random-famous-quotes](https://market.mashape.com/andruxnet/random-famous-quotes)
 * style the page
 * refactor html to be more semantic
-* add a button to tweet out a quote
+* fix button to tweet out a quote

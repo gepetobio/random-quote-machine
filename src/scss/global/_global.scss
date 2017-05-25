@@ -12,6 +12,7 @@ html {
 }
 body {
     background: $white;
+    padding: 20px;
 }
 .wrapper {
     margin: auto;
@@ -25,7 +26,19 @@ body {
     max-width: 500px;
 }
 .quotes-quote {
+    margin-bottom: 20px;
     border-radius: 5px;
-    background: red;
+    background: $grey0;
     padding: 30px;
+}
+.btn {
+    border: 0;
+    border-radius: 5px;
+    padding: 20px;
+    text-decoration: none;
+}
+.btn--tweetThis {
+    display: inline-block;
+    background: $blue0;
+    color: $white;
 }
