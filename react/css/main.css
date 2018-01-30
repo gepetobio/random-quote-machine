@@ -1,0 +1,96 @@
+body {
+    background-color: #FFB130;
+}
+.btn {
+    display: block;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+.automaticGeneration {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+.sectionQuotes {
+    margin: 50px 0;
+    padding: 20px;
+}
+.quote {
+    transition: all 0.4s ease-in-out;
+    margin: 0 auto 30px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 30px;
+    width: 60vw;
+    max-width: 500px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.quote > :first-child {
+    margin-top: 0;
+}
+.quote footer {
+    display: flex;
+    justify-content: space-between;
+}
+.quote cite {
+    padding-left: 15px;
+    text-align: right;
+    line-height: 36px;
+    font-size: 18px;
+}
+.quote .share {
+    order: -1;
+}
+.share .btn {
+    background-color: #FFB130;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+.share .btn svg {
+    transform: translateY(3px);
+}
+.sectionFooter .btn {
+    margin: auto;
+    text-transform: uppercase;
+}
+.mainFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #111;
+    padding: 0 10px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 12px;
+}
+.mainFooter a {
+    text-decoration: none;
+    color: #fff;
+}
+@media screen and (min-width: 768px) {
+    .quote {
+        font-size: 24px;
+    }
+}
+@media screen and (min-height: 768px) {
+    .sectionQuotes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 100px);
+    }
+}
