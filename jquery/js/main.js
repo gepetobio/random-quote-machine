@@ -21,7 +21,6 @@
       url,
       method: type
     }).then(function(data) {
-      console.log(data);
       callback(data);
     });
   };
