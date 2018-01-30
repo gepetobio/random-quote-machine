@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Random Quote Machine</title>
+        <title>Random Quote Machine - jQuery</title>
         <meta name="description" content="Yet another random quote machine">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -17,18 +17,42 @@
         <![endif]-->
 
         <main>
-            <div class="wrapper">
-                <section class="quotes">
-                    <div class="quotes-wrapper">
-                        <div class="quotes-quote">
-                            <blockquote></blockquote>
-                            <a class="js-tweet-btn btn btn--tweetThis" target="_blank" href="#">Tweet this</a>
-                        </div>
-
-                        <button class="js-new-quote btn btn--primary quotes-button">New quote</button>
-                    </div>
-                </section>
-            </div>
+            <!-- TODO: implement this
+              <div class="automaticGeneration">
+                <form>
+                  <input type="checkbox" id="enable-random" />
+                  <label htmlFor="enable-random">Enable automatic generation</label>
+                </form>
+              </div> -->
+            <section class="sectionQuotes">
+                <div class="quoteWrapper">
+                    <blockquote class="quote">
+                        <p></p>
+                        <footer>
+                            <div class="citation">
+                                <cite>–
+                                    <span></span>
+                                </cite>
+                            </div>
+                            <div class="share">
+                                <a class="btn" target="_blank">
+                                    <svg width="12" height="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.191 15.8H5.058l-.087-.006c-2.81-.255-4.69-2.368-4.673-5.242V2.658C.298 1.63 1.128.8 2.156.8c1.027 0 1.857.83 1.857 1.858v2.74l5.393.052a1.856 1.856 0 0 1 1.84 1.875 1.86 1.86 0 0 1-1.857 1.84H9.37l-5.358-.052v1.445c-.006 1.318.819 1.486 1.22 1.527H9.19c1.028 0 1.858.83 1.858 1.857 0 1.028-.83 1.858-1.858 1.858z"
+                                            fill="#FFF" fill-rule="nonzero" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <footer class="sectionFooter">
+                        <button id="newQuoteBtn" class="generate btn">New quote</button>
+                    </footer>
+                </div>
+            </section>
+        
+            <footer class="mainFooter">by
+                <a href="http://www.gledsleymuller.com" target="_blank">Gledsley Müller</a>
+            </footer>
         </main>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
