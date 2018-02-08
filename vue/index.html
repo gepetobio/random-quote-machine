@@ -12,8 +12,10 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script> -->
+    <script src="./js/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.16.2/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -22,45 +24,29 @@
         <![endif]-->
 
     <main>
-        <!-- TODO: implement this
-      <div class="automaticGeneration">
-        <form>
-          <input type="checkbox" id="enable-random" />
-          <label htmlFor="enable-random">Enable automatic generation</label>
-        </form>
-      </div> -->
-        <section class="sectionQuotes">
-            <div class="quoteWrapper">
-                <blockquote class="quote">
-                    <p></p>
-                    <footer>
-                        <div class="citation">
-                            <cite>–
-                                <span></span>
-                            </cite>
-                        </div>
-                        <div class="share">
-                            <a class="btn" target="_blank">
-                                <svg width="12" height="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.191 15.8H5.058l-.087-.006c-2.81-.255-4.69-2.368-4.673-5.242V2.658C.298 1.63 1.128.8 2.156.8c1.027 0 1.857.83 1.857 1.858v2.74l5.393.052a1.856 1.856 0 0 1 1.84 1.875 1.86 1.86 0 0 1-1.857 1.84H9.37l-5.358-.052v1.445c-.006 1.318.819 1.486 1.22 1.527H9.19c1.028 0 1.858.83 1.858 1.857 0 1.028-.83 1.858-1.858 1.858z"
-                                        fill="#FFF" fill-rule="nonzero" />
-                                </svg>
-                            </a>
-                        </div>
+        <div id="root">
+            <!-- TODO: implement this
+            <div class="automaticGeneration">
+            <form>
+                <input type="checkbox" id="enable-random" />
+                <label htmlFor="enable-random">Enable automatic generation</label>
+            </form>
+            </div> -->
+            <section class="sectionQuotes">
+                <div class="quoteWrapper">
+                    <the-quote v-model="root" :quote="quote" :author="author" :share="share"></the-quote>
+                    <footer class="sectionFooter">
+                        <new-quote-button @new-quote-requested="onNewQuoteRequest"></new-quote-button>
                     </footer>
-                </blockquote>
-                <footer class="sectionFooter">
-                    <button id="newQuoteBtn" class="generate btn">New quote</button>
-                </footer>
-            </div>
-        </section>
-    
-        <footer class="mainFooter">by
-            <a href="http://www.gledsleymuller.com" target="_blank">Gledsley Müller</a>
-        </footer>
+                </div>
+            </section>
+
+            <app-footer></app-footer>
+
+        </div>
     </main>
     <script src="js/main.js"></script>
-  
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 (function() {
-  const apiURL = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
+  const apiURL = 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1';
   const newQuoteBtn = document.getElementById('newQuoteBtn');
   const twitterURL = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp,javascript&text=';
 
@@ -20,6 +20,7 @@
     let response = '';
 
     req.open(type, url, true);
+    req.setRequestHeader('X-Mashape-Key', 'xqkRpA3gtDmsh7egtMLVWVy8Be1rp1BD4ysjsnbWaFxel0ZOPw');
 
     req.onreadystatechange = () => {
       if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
@@ -33,8 +34,8 @@
 
   const setNewQuote = data => {
     const json = JSON.parse(data);
-    const newQuote = decodeHtmlEntity(removeHTMLTags(json[0].content.trim()))
-    const newAuthor = json[0].title.trim();
+    const newQuote = json.quote;
+    const newAuthor = json.author;
 
     document.querySelector('.quote p').innerHTML = newQuote;
     document.querySelector('.citation span').innerHTML = newAuthor;
