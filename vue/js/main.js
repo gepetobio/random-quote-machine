@@ -1,13 +1,12 @@
 // this would go to another file, tested and imported
 const updateURL = (q, a) => {
-  console.log('running updateURL', twitterURL + encodeURIComponent('"' + q.trim() + '" ' + a));
   return twitterURL + encodeURIComponent('"' + q.trim() + '" ' + a);
 }
 
 const apiURL = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
 const twitterURL = 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp,javascript&text=';
-const initialQuote = 'I contend that we are both atheists. I just believe in one fewer god than you do. When you understand why you dismiss all the other possible gods, you will understand why I dismiss yours.';
-const initialAuthor = 'Stephen Roberts';
+const initialQuote = 'A lie gets halfway around the world before the truth has a chance to get its pants on.';
+const initialAuthor = 'Sir Winston Churchill';
 const initialURL = updateURL(initialQuote, initialAuthor);
 
 // this would go to another file, tested and imported
