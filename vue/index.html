@@ -34,7 +34,7 @@
             </div> -->
             <section class="sectionQuotes">
                 <div class="quoteWrapper">
-                    <the-quote v-model="root" :quote="quote" :author="author" :share="share"></the-quote>
+                    <the-quote :quote="$root.quote" :author="$root.author" :share="$root.share"></the-quote>
                     <footer class="sectionFooter">
                         <new-quote-button @new-quote-requested="onNewQuoteRequest"></new-quote-button>
                     </footer>
