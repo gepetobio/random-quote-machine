@@ -111,8 +111,8 @@ class App extends React.Component {
   handleClick = () => {
     makeRequest(apiURL)
       .then(response => {
-        const newQuote = response.data.quote;
-        const newAuthor = response.data.author;
+        const newQuote = response.data.0.quote;
+        const newAuthor = response.data.0.author;
 
         this.updateState({
           quote: newQuote,
